@@ -20,7 +20,10 @@ public class SellingAssertion extends BaseAssertion{
     }
     public SellingAssertion assertNewlyCreatedItemShouldBeInLatestListings(){
         Long listingId = response.body().jsonPath().getLong("ListingId");
-        List<Item> actualItemList = listingsApi.getLatestListings()
+        List<Item> actualItemList = listingsApi
+                .queryParam("rows", 100)
+                .queryParam("sort_order", "TitleAsc")
+                .getLatestListings()
                 .andReturn().body().jsonPath().getList("List", Item.class);
 
        assertTrue(actualItemList.stream()

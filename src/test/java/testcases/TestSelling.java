@@ -12,7 +12,7 @@ public class TestSelling extends BaseTest{
         //prepare
         Item item = new Item();
         item.setCategory("3849");
-        item.setTitle("My ART");
+        item.setTitle("_My ART_");
         item.setDescription(new String[]{"All true art lovers will buy this", "Art art art..."});
         item.setStartPrice(10.40);
         item.setBuyNowPrice(20.00);

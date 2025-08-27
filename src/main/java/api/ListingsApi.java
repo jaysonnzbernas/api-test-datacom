@@ -10,4 +10,9 @@ public class ListingsApi extends BaseApi{
 
         return getAPI(latestListingsUri);
     }
+
+    public ListingsApi queryParam(String paramName, Object value){
+        request.queryParam(paramName, value);
+        return this;
+    }
 }
